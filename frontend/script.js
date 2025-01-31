@@ -51,7 +51,7 @@ function attachErrorClearHandler(inputElement, errorElement) {
 async function fetchRegions() {
     try {
         displayLoadingIndicator();
-        const response = await fetch('http://localhost:3000/regions');
+        const response = await fetch('https://anikina-site.onrender.com/regions');
         availableRegions = await response.json();
         console.log('Regions retrieved:', availableRegions);
     } catch (error) {
@@ -156,7 +156,7 @@ function resetOnRegionChange(region) {
 async function loadStops(region) {
     try {
         displayLoadingIndicator();
-        const response = await fetch(`http://localhost:3000/stops?region=${region}`);
+        const response = await fetch(`https://anikina-site.onrender.com/stops?region=${region}`);
         availableStops = await response.json();
         console.log(`Stops in region ${region} loaded:`, availableStops);
         stopDropdown.innerHTML = '';
@@ -219,7 +219,7 @@ async function fetchBuses(stop) {
     try {
         displayLoadingIndicator();
         const response = await fetch(
-            `http://localhost:3000/buses?stop=${encodeURIComponent(stop)}&region=${encodeURIComponent(selectedRegion)}`
+            `https://anikina-site.onrender.com/buses?stop=${encodeURIComponent(stop)}&region=${encodeURIComponent(selectedRegion)}`
         );
 
         if (!response.ok) {
@@ -260,7 +260,7 @@ async function fetchBusScheduleDetails(bus, stop) {
     try {
         displayLoadingIndicator(); // Показываем индикатор загрузки
 
-        const response = await fetch(`http://localhost:3000/bus-details?bus=${bus}&stop=${stop}`, { signal });
+        const response = await fetch(`https://anikina-site.onrender.com/bus-details?bus=${bus}&stop=${stop}`, { signal });
         const scheduleDetails = await response.json();
 
         // Проверяем, была ли нажата кнопка "Back"
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const { latitude, longitude } = position.coords;
 
                 try {
-                    const response = await fetch(`http://localhost:3000/nearest?lat=${latitude}&lon=${longitude}`);
+                    const response = await fetch(`https://anikina-site.onrender.com/nearest?lat=${latitude}&lon=${longitude}`);
                     const nearestData = await response.json();
 
                     regionInputField.value = nearestData.region;
