@@ -1,0 +1,209 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    color: #333;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #007bff;
+    margin: 0;
+}
+
+/* Search section */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.input-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.custom-input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.suggestions {
+    max-height: 150px;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+    padding: 0;
+    list-style: none;
+    display: none;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestions li:hover {
+    background-color: #f0f8ff;
+}
+
+/* Clear button */
+.clear-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    background: #ff7e5f;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clear-button:hover {
+    background: #feb47b;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading spinner */
+.loading-spinner {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Results sections */
+.results-section, .bus-details-section {
+    margin-top: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h3, .bus-details-section h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 0;
+}
+
+.results-section ul, .bus-details-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Align items horizontally */
+    flex-wrap: wrap; /* Wrap items to the next row if needed */
+    gap: 10px; /* Space between items */
+    justify-content: center; /* Center-align items */
+}
+
+.results-section ul li, .bus-details-section ul li {
+    margin: 0;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* Increase font size */
+    font-weight: bold;
+    text-align: center;
+    min-width: 60px; /* Minimum width for items */
+}
+
+.results-section ul li:hover, .bus-details-section ul li:hover {
+    background: #e6f7ff;
+}
+
+/* Error messages */
+.error-message {
+    font-size: 14px;
+    color: #ff4d4f;
+}
+
+#busDetails:empty {
+    display: none; /* Hide the empty container */
+}
+
+.no-results {
+    padding: 10px;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+}
+
+.bus-button {
+    padding: 15px 20px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bus-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.bus-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bus-list-horizontal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
